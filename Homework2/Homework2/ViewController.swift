@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     private let valueLabel: UILabel = UILabel()
     private let commentLabel: UILabel = UILabel()
     private let incrementButton: UIButton = UIButton(type: .system)
+    private let colorPalette = ColorPaletteView()
+    private var buttonsSV: UIStackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        self.view.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = UIColor.systemGray6
         self.setupUI()
     }
 
@@ -59,6 +61,18 @@ class ViewController: UIViewController {
         commentLabel.pinCenterX(to: self.view)
         commentLabel.pinTop(to: self.view.safeAreaLayoutGuide.topAnchor, 20)
     }
+    
+    private func setupColorPalette() {
+        self.view.addSubview(colorPalette)
+        colorPalette.isHidden = true
+        colorPalette.backgroundColor = UIColor.white
+        colorPalette.layer.cornerRadius = 15
+        colorPalette.pinCenterX(to: self.view)
+        colorPalette.pinTop(to: self.incrementButton.bottomAnchor, 20)
+        colorPalette.pinBottom(to: self.buttonsSV.topAnchor, 20)
+        colorPalette.pinLeft(to: self.view.leadingAnchor, 10)
+        colorPalette.addTarget(self, action: #selector(paletteColorChanged), for: .touchDragInside)
+    }
 
     @objc
     private func incrementButtonPressed() {
@@ -66,11 +80,24 @@ class ViewController: UIViewController {
         updateUI();
     }
     
+    @objc
+    private func colorsButtonPressed() {
+        colorPalette.isHidden = !colorPalette.isHidden
+    }
+    
+    @objc
+    private func paletteColorChanged() {
+        UIView.animate(withDuration: 3) {
+            self.view.backgroundColor = self.colorPalette.getCurrentColor()
+        }
+    }
+    
     private func setupUI() {
         setupButton()
         setupValueLabel()
         setupCommentLabel()
         setupMenuButtons()
+        setupColorPalette()
     }
     
     private func updateUI() {
@@ -125,7 +152,8 @@ class ViewController: UIViewController {
         let colorsButton = makeMenuButton(title: "🎨")
         let notesButton = makeMenuButton(title: "📝")
         let newsButton = makeMenuButton(title: "📰")
-        let buttonsSV = UIStackView(arrangedSubviews: [colorsButton, notesButton, newsButton])
+        colorsButton.addTarget(self, action: #selector(colorsButtonPressed), for: .touchUpInside)
+        self.buttonsSV = UIStackView(arrangedSubviews: [colorsButton, notesButton, newsButton])
         buttonsSV.spacing = 15
         buttonsSV.axis = .horizontal
         buttonsSV.distribution = .fillEqually
@@ -138,7 +166,6 @@ class ViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title, for: .normal)
-        button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 15
         button.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
         button.backgroundColor = .white

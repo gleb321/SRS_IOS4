@@ -12,6 +12,7 @@
 		073C6FAF28F3943A007C2B71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C6FAE28F3943A007C2B71 /* ViewController.swift */; };
 		073C6FB428F3943C007C2B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073C6FB328F3943C007C2B71 /* Assets.xcassets */; };
 		073C6FC028F5D31A007C2B71 /* UIView+Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C6FBF28F5D31A007C2B71 /* UIView+Pin.swift */; };
+		07D99EA329102D1600B6A1C1 /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D99EA229102D1600B6A1C1 /* ColorPaletteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		073C6FB328F3943C007C2B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		073C6FB828F3943C007C2B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		073C6FBF28F5D31A007C2B71 /* UIView+Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Pin.swift"; sourceTree = "<group>"; };
+		07D99EA229102D1600B6A1C1 /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				073C6FBF28F5D31A007C2B71 /* UIView+Pin.swift */,
 				073C6FB328F3943C007C2B71 /* Assets.xcassets */,
 				073C6FB828F3943C007C2B71 /* Info.plist */,
+				07D99EA229102D1600B6A1C1 /* ColorPaletteView.swift */,
 			);
 			path = Homework2;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				073C6FAF28F3943A007C2B71 /* ViewController.swift in Sources */,
+				07D99EA329102D1600B6A1C1 /* ColorPaletteView.swift in Sources */,
 				073C6FAB28F3943A007C2B71 /* AppDelegate.swift in Sources */,
 				073C6FC028F5D31A007C2B71 /* UIView+Pin.swift in Sources */,
 				073C6FAD28F3943A007C2B71 /* SceneDelegate.swift in Sources */,
