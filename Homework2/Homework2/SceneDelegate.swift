@@ -1,11 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Homework2
-//
-//  Created by Gleb Evlakhov on 10.10.2022.
-//  Copyright © 2022 Gleb Evlakhov. All rights reserved.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

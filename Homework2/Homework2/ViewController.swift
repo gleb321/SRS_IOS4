@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Homework2
-//
-//  Created by Gleb Evlakhov on 10.10.2022.
-//  Copyright © 2022 Gleb Evlakhov. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -14,6 +6,7 @@ class ViewController: UIViewController {
     private let commentLabel: UILabel = UILabel()
     private let incrementButton: UIButton = UIButton(type: .system)
     private let colorPalette = ColorPaletteView()
+    private let notesViewController = NotesViewController()
     private var buttonsSV: UIStackView = UIStackView()
     
     override func viewDidLoad() {
@@ -92,6 +85,11 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc
+    private func notesButtonPressed() {
+        self.present(notesViewController, animated: true)
+    }
+    
     private func setupUI() {
         setupButton()
         setupValueLabel()
@@ -153,6 +151,7 @@ class ViewController: UIViewController {
         let notesButton = makeMenuButton(title: "📝")
         let newsButton = makeMenuButton(title: "📰")
         colorsButton.addTarget(self, action: #selector(colorsButtonPressed), for: .touchUpInside)
+        notesButton.addTarget(self, action: #selector(notesButtonPressed), for: .touchUpInside)
         self.buttonsSV = UIStackView(arrangedSubviews: [colorsButton, notesButton, newsButton])
         buttonsSV.spacing = 15
         buttonsSV.axis = .horizontal

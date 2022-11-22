@@ -1,11 +1,3 @@
-//
-//  ColorPaletteView.swift
-//  Homework2
-//
-//  Created by Gleb Evlakhov on 31.10.2022.
-//  Copyright © 2022 Gleb Evlakhov. All rights reserved.
-//
-
 import UIKit
 
 final class ColorPaletteView: UIControl {

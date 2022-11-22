@@ -1,16 +1,15 @@
-//
-//  UIView+Pin.swift
-//  Homework2
-//
-//  Created by Gleb Evlakhov on 11.10.2022.
-//  Copyright © 2022 Gleb Evlakhov. All rights reserved.
-//
-
 import UIKit
 
 extension UIView {
     enum PinSide {
         case top, bottom, left, right
+    }
+    
+    func pin(to view: UIView) {
+        pinLeft(to: view)
+        pinRight(to: view)
+        pinTop(to: view)
+        pinBottom(to: view)
     }
 
     func pin(to superview: UIView, _ sides: [PinSide : Int]) {

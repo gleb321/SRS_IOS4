@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Homework2
-//
-//  Created by Gleb Evlakhov on 10.10.2022.
-//  Copyright © 2022 Gleb Evlakhov. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -29,4 +21,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
-
